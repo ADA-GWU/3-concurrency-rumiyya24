@@ -12,7 +12,7 @@ Step 1: Make sure Java is installed in your machine. To check this, enter the ja
 
 Step 2: Save the file as “ImageProcessor.java”
 
-Step 3: Open the Terminal and navigate to the directory where the java file is saved. “cd” command can be used to accomplish this. In my case, I navigated to the folder as: 
+Step 3: Open the Terminal and navigate to the directory where the java file is saved. “cd” command can be used to accomplish this. In my case, I navigated to the folder as: cd ~/IdeaProjects/imageProcessing/src
 
 Step 4: Compile the file using this command: javac ImageProcessor.java
 
