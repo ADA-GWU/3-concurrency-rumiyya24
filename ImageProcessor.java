@@ -10,7 +10,7 @@ public class ImageProcessor {
 
     public static void main(String[] args) {
         if (args.length != 3) {
-            System.out.println("Usage: java ImageProcessor <filename> <square size> <S/M>");
+            System.out.println("How to use: java ImageProcessor <filename> <square size> <S/M>");
             System.exit(1);
         }
 
@@ -26,11 +26,14 @@ public class ImageProcessor {
             return;
         }
 
+        // determine the number of threads based on the processing mode
         int numThreads = processingMode == 'M' ? Runtime.getRuntime().availableProcessors() : 1;
+        // create a thread pool with the determined number of threads
         ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
 
         BufferedImage processedImage = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_RGB);
 
+          // iterate over the image by squares of the given size
         for (int y = 0; y < image.getHeight(); y += squareSize) {
             for (int x = 0; x < image.getWidth(); x += squareSize) {
                 final int threadX = x;
@@ -60,7 +63,7 @@ public class ImageProcessor {
                 rgbArray[pixelCount++] = originalImage.getRGB(i, j);
             }
         }
-
+         // set the average color to each pixel in the square
         Color averageColor = calculateAverageColor(rgbArray, pixelCount);
         for (int j = y; j < y + squareSize && j < originalImage.getHeight(); j++) {
             for (int i = x; i < x + squareSize && i < originalImage.getWidth(); i++) {
