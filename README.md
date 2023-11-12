@@ -1,1 +1,21 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/YybNWfh8)
+EXPLANATION OF THE CODE
+
+In the given code, we indicate the number of threads for image processing using either “S” or “M” letter. If the processingMode is:
+•	“S”, the program sets the number of threads to 1. Which means that the image processing will occur in a single thread, in a serial fashion, one square after another. The next square is processed only after the previous one is finished. 
+•	“M”, the program sets the number of threads to the number of available processors on the machine. This enables parallel processing, where multiple squares of the image are processed at the same time by different threads. 
+
+RUNNING THE PROGRAM
+
+Prerequisites: Java Development Kit (JDK) 8 or higher. 
+
+Step 1: Make sure Java is installed in your machine. To check this, enter the java -version command in Terminal. If Java is not installed, you can get it from Oracle website or simply enter brew install openjdk
+
+Step 2: Save the file as “ImageProcessor.java”
+
+Step 3: Open the Terminal and navigate to the directory where the java file is saved. “cd” command can be used to accomplish this. In my case, I navigated to the folder as: 
+
+Step 4: Compile the file using this command: javac ImageProcessor.java
+
+Step 5: Run the program using: java ImageProcessor filename.jpg 30 S or java ImageProcessor filename.jpg 30 M
+
+Notes: Please replace the filename with the name of the image file you want to test. 30 written above indicates the square size. The image I tested the program with was large in size, thus, the result was hard to see when I entered numbers like “5”, “10”, or “15”. The bigger the square size is, the blurrier the picture will be, of course, depending on the size of the original image itself. In addition, please make sure the image file is located in the same folder as your java code. 
