@@ -20,9 +20,4 @@ In the given code, we indicate the number of threads for image processing using 
 
 <b>Notes:</b> Please replace the filename with the name of the image file you want to test. 30 written above indicates the square size. The image I tested the program with was large in size, thus, the result was hard to see when I entered numbers like “5”, “10”, or “15”. The bigger the square size is, the blurrier the picture will be, of course, depending on the size of the original image itself. In addition, please make sure the image file is located in the same folder as your java code. 
 
-<h3> RESULTS OF THE PROGRAM </h3>
 
-Before running:
-![Original file](https://file%252B.vscode-resource.vscode-cdn.net/Users/rumiyyaalili/IdeaProjects/imageProcessing/src/Mona_Lisa.jpg?version%253D1699795491222)
-
-After running:
