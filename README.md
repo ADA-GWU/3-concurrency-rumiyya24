@@ -1,12 +1,12 @@
-<h1> EXPLANATION OF THE CODE </h1>
+<h1> 💻 EXPLANATION OF THE CODE </h1>
 
 In the given code, we indicate the number of threads for image processing using either “S” or “M” letter. If the processingMode is:
 •	“S”, the program sets the number of threads to 1. Which means that the image processing will occur in a single thread, in a serial fashion, one square after another. The next square is processed only after the previous one is finished. 
 •	“M”, the program sets the number of threads to the number of available processors on the machine. This enables parallel processing, where multiple squares of the image are processed at the same time by different threads. 
 
-<h2> RUNNING THE PROGRAM </h2>
+<h2> 📊 RUNNING THE PROGRAM </h2>
 
-<b>Prerequisites:</b> Java Development Kit (JDK) 8 or higher. 
+<b>Prerequisites:</b> ☕️ Java Development Kit (JDK) 8 or higher. 
 
 <b>Step 1:</b> Make sure Java is installed in your machine. To check this, enter the java -version command in Terminal. If Java is not installed, you can get it from Oracle website or simply enter brew install openjdk
 
