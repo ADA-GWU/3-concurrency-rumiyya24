@@ -38,3 +38,47 @@ public class ImageProcessor {
                 executorService.execute(() -> processSquare(image, processedImage, threadX, threadY, squareSize));
             }
         }
+
+        executorService.shutdown();
+        while (!executorService.isTerminated()) {
+            // wait for all tasks to finish
+        }
+
+        try {
+            ImageIO.write(processedImage, "jpg", new File("result.jpg"));
+        } catch (IOException e) {
+            System.out.println("Error writing the output file: " + e.getMessage());
+        }
+    }
+
+    private static void processSquare(BufferedImage originalImage, BufferedImage processedImage, int x, int y, int squareSize) {
+        int[] rgbArray = new int[squareSize * squareSize];
+        int pixelCount = 0;
+
+        for (int j = y; j < y + squareSize && j < originalImage.getHeight(); j++) {
+            for (int i = x; i < x + squareSize && i < originalImage.getWidth(); i++) {
+                rgbArray[pixelCount++] = originalImage.getRGB(i, j);
+            }
+        }
+
+        Color averageColor = calculateAverageColor(rgbArray, pixelCount);
+        for (int j = y; j < y + squareSize && j < originalImage.getHeight(); j++) {
+            for (int i = x; i < x + squareSize && i < originalImage.getWidth(); i++) {
+                processedImage.setRGB(i, j, averageColor.getRGB());
+            }
+        }
+    }
+
+    private static Color calculateAverageColor(int[] rgbArray, int pixelCount) {
+        long sumRed = 0;
+        long sumGreen = 0;
+        long sumBlue = 0;
+        for (int i = 0; i < pixelCount; i++) {
+            Color pixel = new Color(rgbArray[i]);
+            sumRed += pixel.getRed();
+            sumGreen += pixel.getGreen();
+            sumBlue += pixel.getBlue();
+        }
+        return new Color((int) (sumRed / pixelCount), (int) (sumGreen / pixelCount), (int) (sumBlue / pixelCount));
+    }
+}
