@@ -1,10 +1,10 @@
-EXPLANATION OF THE CODE
+<h1> EXPLANATION OF THE CODE </h1>
 
 In the given code, we indicate the number of threads for image processing using either “S” or “M” letter. If the processingMode is:
 •	“S”, the program sets the number of threads to 1. Which means that the image processing will occur in a single thread, in a serial fashion, one square after another. The next square is processed only after the previous one is finished. 
 •	“M”, the program sets the number of threads to the number of available processors on the machine. This enables parallel processing, where multiple squares of the image are processed at the same time by different threads. 
 
-RUNNING THE PROGRAM
+<h2> RUNNING THE PROGRAM </h2>
 
 Prerequisites: Java Development Kit (JDK) 8 or higher. 
 
