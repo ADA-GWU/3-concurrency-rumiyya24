@@ -6,13 +6,9 @@ import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ImageProcessor {
+public class Concurrency {
 
     public static void main(String[] args) {
-        if (args.length != 3) {
-            System.out.println("How to use: java ImageProcessor <filename> <square size> <S/M>");
-            System.exit(1);
-        }
 
         String fileName = args[0];
         int squareSize = Integer.parseInt(args[1]);
